@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SoccerStat</title>
+    <script type="text/javascript">
+      const pathSegments = location.pathname.split('/');
+      const newPath = '/' + pathSegments.slice(2).join('/');
+      window.location.href = `/soccerstat/#${newPath}`;
+    </script>
+  </head>
+  <body></body>
+</html>
