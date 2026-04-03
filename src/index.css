@@ -1,0 +1,62 @@
+/* Базовые стили для мобильных (по умолчанию) */
+body {
+  font-size: 14px;
+}
+table, thead, tbody, th, td, tr {
+  display: block;
+}
+th, td {
+  width: 100%;
+  padding: 8px;
+  text-align: left;
+}
+thead {
+  display: none;
+}
+tr {
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px;
+}
+td {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+td::before {
+  content: attr(data-label);
+  font-weight: bold;
+  width: 40%;
+}
+/* Для планшетов (iPad 11) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  table, thead, tbody, th, td, tr {
+    display: revert;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr {
+    display: table-row;
+  }
+  td {
+    display: table-cell;
+  }
+  td::before {
+    display: none;
+  }
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+/* Для десктопа (ширина > 1024px) */
+@media (min-width: 1025px) {
+  body {
+    font-size: 16px;
+  }
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
